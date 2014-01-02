@@ -1,6 +1,4 @@
 # coding: utf-8
-Vagrant.require_plugin('vagrant-snapshot')
-
 Vagrant.configure('2') do |config|
   config.vm.hostname = 'vagrant-snapshot-test'
   config.vm.box = 'opscode-centos-6.5-i386'
