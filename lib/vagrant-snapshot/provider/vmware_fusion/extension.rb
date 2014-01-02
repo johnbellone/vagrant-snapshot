@@ -3,7 +3,7 @@ require 'vagrant/action/builder'
 
 module VagrantPlugins
   module ProviderVmwareFusion
-    module Action
+    module Extension
       
     end
   end
