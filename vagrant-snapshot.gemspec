@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_runtime_dependency 'fog', '~> 1.19'
+  s.add_runtime_dependency 'fog', '~> 1.18'
 
   s.add_development_dependency 'bundler', '~> 1.3'
   s.add_development_dependency 'rake'
