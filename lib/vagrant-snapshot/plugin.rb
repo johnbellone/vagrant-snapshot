@@ -37,5 +37,13 @@ DESC
     end
 
     autoload :Action, File.expand_path('../action', __FILE__)
+
+    module Provider
+      provider_root = File.expand_path('../provider', __FILE__)
+      autoload :Extension, provider_root.join('virtualbox/extension')
+      autoload :Extension, provider_root.join('aws/extension')  
+      autoload :Extension, provider_root.join('vmware_fusion/extension')  
+      autoload :Extension, provider_root.join('openstack/extension')  
+    end
   end
 end
