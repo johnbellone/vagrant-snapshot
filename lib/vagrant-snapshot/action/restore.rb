@@ -1,8 +1,8 @@
 # coding: utf-8
 module VagrantPlugins
-  module ProviderVirtualBox
+  module Snapshot
     module Action
-      class RestoreSnapshot
+      class Restore
 
         def initialize(app, env)
           @app = app
@@ -10,6 +10,10 @@ module VagrantPlugins
 
         def call(env)
           @env = env
+
+          env[:ui].info I18n.t('vagrant.actions.vm.snapshot.restoring')
+
+          @app.call(env)
         end
 
       end
