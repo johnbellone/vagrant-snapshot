@@ -2,7 +2,7 @@
 require 'vagrant/action/builder'
 
 module VagrantPlugins
-  module ProviderVirtualBox
+  module ProviderOpenstack
     module Extension
       module Driver
         autoload :Base, File.expand_path('../driver/base', __FILE__)

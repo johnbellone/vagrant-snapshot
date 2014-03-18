@@ -1,6 +1,6 @@
 # coding: utf-8
 module VagrantPlugins
-  module Snapshot
+  module VagrantSnapshot
     class Plugin < Vagrant.plugin('2')
       name 'snapshot command'
       description <<-DESC

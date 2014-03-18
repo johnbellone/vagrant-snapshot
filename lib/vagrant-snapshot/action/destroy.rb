@@ -1,6 +1,6 @@
 # coding: utf-8
 module VagrantPlugins
-  module Snapshot
+  module VagrantSnapshot
     module Action
       class Destroy
 

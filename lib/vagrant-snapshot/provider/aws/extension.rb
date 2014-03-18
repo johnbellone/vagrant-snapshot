@@ -2,8 +2,8 @@
 require 'vagrant/action/builder'
 
 module VagrantPlugins
-  module ProviderOpenstack
-    module Action
+  module VagrantAWS
+    module Extension
       
     end
   end

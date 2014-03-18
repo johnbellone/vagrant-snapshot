@@ -1,6 +1,6 @@
 # coding: utf-8
 module VagrantPlugins
-  module Snapshot
+  module VagrantSnapshot
     module Action
       action_root = Pathname.new(File.expand_path('../action', __FILE__))
       autoload :Create, action_root.join('create')
