@@ -4,10 +4,11 @@ require 'vagrant/action/builder'
 module VagrantPlugins
   module ProviderVmwareFusion
     module Extension
-
-      module Driver
-        autoload :Base, File.expand_path('../driver/base', __FILE__)
+      def self.extension_root
+        @root ||= Pathname.new(File.dirname(__FILE__)) 
       end
+
+      autoload :Driver, File.join(extension_root, 'driver')
     end
   end
 end

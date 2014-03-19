@@ -1,12 +1,17 @@
 # coding: utf-8
 module VagrantPlugins
-  module VagrantAWS
-    module Action
-      action_root = Pathname.new(File.expand_path('../action', __FILE__))
-      autoload :CreateSnapshot, action_root.join('create_snapshot')
-      autoload :DestroySnapshot, action_root.join('destroy_snapshot')
-      autoload :RestoreSnapshot, action_root.join('restore_snapshot')
-      autoload :ListSnapshots, action_root.join('list_snapshots')
+  module ProviderAWS
+    module Extension
+      module Action
+        def self.action_root
+          @root ||= Pathname.new(File.expand_path('../action', __FILE__))
+        end
+
+        autoload :CreateSnapshot, File.join(action_root, 'create_snapshot')
+        autoload :DestroySnapshot, File.join(action_root, 'destroy_snapshot')
+        autoload :RestoreSnapshot, File.join(action_root, 'restore_snapshot')
+        autoload :ListSnapshots, File.join(action_root, 'list_snapshots')
+      end      
     end
   end
 end
