@@ -9,10 +9,10 @@ module VagrantPlugins
         def create_snapshot(options={})
         end
 
-        # Deletes a snapshot associated with this VM.
+        # Destroys a snapshot associated with this VM.
         #
         # @param [String] name Unique identifier for the snapshot.
-        def delete_snapshot(name)
+        def destroy_snapshot(name)
         end
 
         # Lists the snapshots of this VM.

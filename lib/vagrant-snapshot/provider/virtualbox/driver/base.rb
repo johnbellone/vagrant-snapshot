@@ -10,14 +10,14 @@ module VagrantPlugins
           args = []
           args.concat(['--description', options[:description]]) if options[:description]
           args.concat('--live') if options[:live]
-          
+
           execute('snapshot', @uuid, 'take', options[:name], *args)
         end
 
-        # Deletes a snapshot associated with this VM.
+        # Destroys a snapshot associated with this VM.
         #
         # @param [String] name Unique identifier for the snapshot.
-        def delete_snapshot(name)
+        def destroy_snapshot(name)
           execute('snapshot', @uuid, 'delete', name)
         end
 
