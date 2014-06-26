@@ -5,18 +5,15 @@ require 'vagrant-snapshot/driver'
 module VagrantPlugins
   module Snapshot
     class Plugin < Vagrant.plugin('2')
-      name 'snapshot command'
-      description <<-DESC
-        This command helps manage snapshots within the Vagrant environment
-        if the guest provider has that capability.
-DESC
-
-      command('snapshot') do
-        require File.expand_path('../command/root', __FILE__)
-        setup_i18n
-        setup_logging
-
-        Command::Root
+      def self.require_optional_dependencies!
+        %w(vagrant-aws vagrant-openstack-plugin vagrant-vmware-fusion).each do |name|
+          begin
+            logger.info "Trying to load optional dependency #{name}."
+            require name
+          rescue Exception => e
+            logger.info "Failed to load #{name}: #{e.inspect}"
+          end
+        end
       end
 
       # Initialize the Internationalization strings for messages.
@@ -36,6 +33,20 @@ DESC
       rescue NameError
       ensure
         logger = nil
+      end
+
+      name 'snapshot command'
+      description <<-DESC
+        This command helps manage snapshots within the Vagrant environment
+        if the guest provider has that capability.
+DESC
+
+      setup_i18n
+      setup_logging
+      require_optional_dependencies!
+
+      command('snapshot') do
+        Command::Root
       end
     end
   end
