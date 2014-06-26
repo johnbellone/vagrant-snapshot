@@ -1,9 +1,11 @@
-require 'pathname'
-
 module VagrantPlugins
   module Snapshot
-    def self.source_root
-      @source_root ||= Pathname.new(File.expand_path('../../', __FILE__))
+    def self.root
+      File.dirname(__dir__)
+    end
+
+    def self.locales
+      File.join(root, 'locales')
     end
   end
 end
