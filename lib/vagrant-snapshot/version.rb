@@ -1,6 +1,5 @@
-# coding: utf-8
 module VagrantPlugins
-  module VagrantSnapshot
+  module Snapshot
     VERSION = '0.1.0.dev'
   end
 end

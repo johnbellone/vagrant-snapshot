@@ -1,6 +1,9 @@
-# coding: utf-8
+require 'vagrant-snapshot/action'
+require 'vagrant-snapshot/command'
+require 'vagrant-snapshot/driver'
+
 module VagrantPlugins
-  module VagrantSnapshot
+  module Snapshot
     class Plugin < Vagrant.plugin('2')
       name 'snapshot command'
       description <<-DESC
@@ -35,7 +38,5 @@ DESC
         logger = nil
       end
     end
-
-    autoload :Action, File.expand_path('../action', __FILE__)
   end
 end

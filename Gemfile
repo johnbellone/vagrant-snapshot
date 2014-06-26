@@ -1,4 +1,3 @@
-# coding: utf-8
 source 'https://rubygems.org'
 
 gemspec
@@ -13,7 +12,7 @@ group :test, :development do
 
   gem 'guard-rspec'
   gem 'yard'
-  
+
   gem 'vagrant', git: 'https://github.com/mitchellh/vagrant',
     ref: ENV.fetch('VAGRANT_VERSION', 'v1.5.0')
 end
