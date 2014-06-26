@@ -6,11 +6,11 @@ module VagrantPlugins
           require 'vagrant-plugin/driver/aws'
         end
 
-        if Vagrant.has_plugin('vagrant-openstack-plugin')
+        if Vagrant.has_plugin?('vagrant-openstack-plugin')
           require 'vagrant-plugin/driver/openstack'
         end
 
-        if Vagrant.has_plugin('vagrant-vmware-fusion')
+        if Vagrant.has_plugin?('vagrant-vmware-fusion')
           require 'vagrant-plugin/driver/vmware_fusion'
         end
 
